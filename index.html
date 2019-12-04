@@ -146,12 +146,20 @@
             document.body.classList.add('body--ready');
             //想说的话
           /**/
-            S.UI.simulate("笨丫头|生日快乐呀|愿你|无所谓风雨|考研顺利上岸|爱你的|小小开发仔|#countdown 4|#rectangle 15x15|#circle 12#time");
+            S.UI.simulate("笨丫头|生日快乐呀|愿你|无所谓风雨|考研顺利上岸|爱你的|小小开发仔|#countdown 4|#rectangle 15x15|#circle 12|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
         }
     };
+    /*requestFrame = window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 100000/60);
+                };*/
     S.Drawing = (function () {
         var canvas,
             context,
@@ -162,7 +170,7 @@
                 window.oRequestAnimationFrame ||
                 window.msRequestAnimationFrame ||
                 function (callback) {
-                    window.setTimeout(callback, 1000/60);
+                  window.setTimeout(callback, 100000/60);
                 };
         return {
             init: function (el) {
